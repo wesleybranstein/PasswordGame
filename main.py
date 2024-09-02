@@ -4,6 +4,7 @@ n = 1
 m = 2
 y = 0
 h = 0
+p = "yes"
 RawMoney = 0
 b = "yes"
 correct = False
@@ -35,25 +36,23 @@ while correct is False:
         print("Or would you like to mine for money?")
         b = input()
     correct = True
-    if b == "Mine for money":
-      while b == "yes":
-       print("Answer this question to earn money",n, "*", m) 
-       h = input() 
+    while p =="yes":
+      if b == "Mine for money":
+        print("Answer this question to earn money",n, "*", m) 
+        h = input()
+        if h == n * m: 
+          m = m + n
+          print("Correct")
+          RawMoney = RawMoney + n * m
+          print("You have",RawMoney,"Raw money")
+          print("Would you like to continue mining?")
+          p = input()
         
-      if h == 1 * 2:
-        m = m + n
-        print("Correct")
-        RawMoney = RawMoney + n * m
-        print("You have",RawMoney,"Raw money")
-        print("Would you like to continue mining?")
-        b = input()
-        if b == "yes":
-          b = 0
-    else:
-      print("Incorrect")
-      print("You have",RawMoney,"Raw money")
-      print("Would you like to continue mining?")
-      b = input()
+        else:
+          print("Incorrect")
+          print("You have",RawMoney,"Raw money")
+          print("Would you like to continue mining?")
+          p = input()
   else:
 
     print("Access DENIED, incorrect passcode!")
