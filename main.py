@@ -7,6 +7,7 @@ h = 0
 p = "yes"
 RawMoney = 0
 b = "yes"
+SoldRawMoney = RawMoney * 10
 correct = False
 while correct is False:
   y = y + 1
@@ -27,6 +28,29 @@ while correct is False:
         print("Your balance is now")
         print(Money)
         print("Would you like to buy anything else?")
+        print("Or would you like to mine for money?")
+        b = input()
+    correct = True
+    while p =="yes":
+      if b == "Mine for money":
+        print("Answer this question to earn money",m, "*", m) 
+        h = int(input())
+        x = m * m
+        print(x)
+        if h == x: 
+          m += n
+          print("Correct")
+          RawMoney = RawMoney + n * m
+          print("You have",RawMoney,"Raw money")
+          print("Would you like to continue mining or sell raw money?")
+          p = input()
+          if p == "Sell raw money":
+            print("Raw money is worth 10$. You will get",SoldRawMoney)
+            print("Selling raw money")
+            time.sleep(2)
+            Money = Money + SoldRawMoney
+            print("Raw money sold you have Gained",SoldRawMoney,"Money")  
+            RawMoney = RawMoney - RawMoney
         b = input()
       if buy == "Solid water":
         Money = Money - 2.50
@@ -38,16 +62,25 @@ while correct is False:
     correct = True
     while p =="yes":
       if b == "Mine for money":
-        print("Answer this question to earn money",n, "*", m) 
-        h = input()
-        if h == n * m: 
-          m = m + n
+        print("Answer this question to earn money",m, "*", m) 
+        h = int(input())
+        x = m * m
+        print(x)
+        if h == x: 
+          m += n
           print("Correct")
           RawMoney = RawMoney + n * m
           print("You have",RawMoney,"Raw money")
-          print("Would you like to continue mining?")
+          print("Would you like to continue mining or sell raw money?")
           p = input()
-        
+          if p == "Sell raw money":
+            print("Raw money is worth 10$. You will get",SoldRawMoney)
+            print("Selling raw money")
+            time.sleep(2)
+            Money = Money + SoldRawMoney
+            print("Raw money sold you have Gained",SoldRawMoney,"Money")  
+            RawMoney = RawMoney - RawMoney
+
         else:
           print("Incorrect")
           print("You have",RawMoney,"Raw money")
