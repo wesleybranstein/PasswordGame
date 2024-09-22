@@ -11,7 +11,7 @@ SoldRawMoney = RawMoney * 10
 correct = False
 
 ###Start of code###
-
+print("Welcome to the banking system enter your four didget passcode to access.")
 while correct is False:
 ###Password guessing###
   y = y + 1
