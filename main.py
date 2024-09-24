@@ -110,7 +110,7 @@ while correct is False:
     print("Access DENIED, incorrect passcode!")
     correct = False
 
-  if y == 15:
+  if y == 10:
     print("Sytem failed reboot Sytem.")
     x = input()
 
